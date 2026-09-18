@@ -1,0 +1,969 @@
+[
+  {
+    "id": "treino-001",
+    "slug": "peito-de-ferro",
+    "titulo": "Peito de Ferro",
+    "categoria": "forca",
+    "grupoMuscular": [
+      "peito",
+      "bracos"
+    ],
+    "nivel": "intermediario",
+    "duracaoMinutos": 50,
+    "descricao": "Treino de força focado em peito, bracos, ideal para ganho de massa muscular e resistência.",
+    "exercicios": [
+      {
+        "id": "peito-de-ferro-ex-1",
+        "nome": "Peck deck",
+        "series": 3,
+        "repeticoes": 12,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "peito-de-ferro-ex-2",
+        "nome": "Supino reto",
+        "series": 3,
+        "repeticoes": 10,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "peito-de-ferro-ex-3",
+        "nome": "Mergulho no banco",
+        "series": 3,
+        "repeticoes": 20,
+        "descansoSegundos": 90
+      },
+      {
+        "id": "peito-de-ferro-ex-4",
+        "nome": "Rosca martelo",
+        "series": 3,
+        "repeticoes": 8,
+        "descansoSegundos": 30
+      }
+    ],
+    "imagemUrl": "/api/imagens/peito-de-ferro.svg"
+  },
+  {
+    "id": "treino-002",
+    "slug": "costas-largas",
+    "titulo": "Costas Largas",
+    "categoria": "forca",
+    "grupoMuscular": [
+      "costas",
+      "bracos"
+    ],
+    "nivel": "intermediario",
+    "duracaoMinutos": 55,
+    "descricao": "Treino de força focado em costas, bracos, ideal para ganho de massa muscular e resistência.",
+    "exercicios": [
+      {
+        "id": "costas-largas-ex-1",
+        "nome": "Remada curvada",
+        "series": 5,
+        "repeticoes": 20,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "costas-largas-ex-2",
+        "nome": "Remada unilateral",
+        "series": 5,
+        "repeticoes": 10,
+        "descansoSegundos": 90
+      },
+      {
+        "id": "costas-largas-ex-3",
+        "nome": "Rosca alternada",
+        "series": 5,
+        "repeticoes": 12,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "costas-largas-ex-4",
+        "nome": "Tríceps testa",
+        "series": 3,
+        "repeticoes": 15,
+        "descansoSegundos": 60
+      }
+    ],
+    "imagemUrl": "/api/imagens/costas-largas.svg"
+  },
+  {
+    "id": "treino-003",
+    "slug": "pernas-de-aco",
+    "titulo": "Pernas de Aço",
+    "categoria": "forca",
+    "grupoMuscular": [
+      "pernas",
+      "core"
+    ],
+    "nivel": "avancado",
+    "duracaoMinutos": 60,
+    "descricao": "Treino de força focado em pernas, core, ideal para ganho de massa muscular e resistência.",
+    "exercicios": [
+      {
+        "id": "pernas-de-aco-ex-1",
+        "nome": "Cadeira extensora",
+        "series": 3,
+        "repeticoes": 12,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "pernas-de-aco-ex-2",
+        "nome": "Leg press",
+        "series": 3,
+        "repeticoes": 15,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "pernas-de-aco-ex-3",
+        "nome": "Elevação de pernas",
+        "series": 5,
+        "repeticoes": 12,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "pernas-de-aco-ex-4",
+        "nome": "Russian twist",
+        "series": 5,
+        "repeticoes": 15,
+        "descansoSegundos": 30
+      }
+    ],
+    "imagemUrl": "/api/imagens/pernas-de-aco.svg"
+  },
+  {
+    "id": "treino-004",
+    "slug": "ombros-em-foco",
+    "titulo": "Ombros em Foco",
+    "categoria": "forca",
+    "grupoMuscular": [
+      "ombros"
+    ],
+    "nivel": "iniciante",
+    "duracaoMinutos": 40,
+    "descricao": "Treino de força focado em ombros, ideal para ganho de massa muscular e resistência.",
+    "exercicios": [
+      {
+        "id": "ombros-em-foco-ex-1",
+        "nome": "Remada alta",
+        "series": 5,
+        "repeticoes": 12,
+        "descansoSegundos": 60
+      },
+      {
+        "id": "ombros-em-foco-ex-2",
+        "nome": "Desenvolvimento militar",
+        "series": 5,
+        "repeticoes": 10,
+        "descansoSegundos": 30
+      }
+    ],
+    "imagemUrl": "/api/imagens/ombros-em-foco.svg"
+  },
+  {
+    "id": "treino-005",
+    "slug": "full-body-iniciante",
+    "titulo": "Full Body Iniciante",
+    "categoria": "forca",
+    "grupoMuscular": [
+      "peito",
+      "costas",
+      "pernas"
+    ],
+    "nivel": "iniciante",
+    "duracaoMinutos": 45,
+    "descricao": "Treino de força focado em peito, costas, pernas, ideal para ganho de massa muscular e resistência.",
+    "exercicios": [
+      {
+        "id": "full-body-iniciante-ex-1",
+        "nome": "Supino reto",
+        "series": 4,
+        "repeticoes": 8,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "full-body-iniciante-ex-2",
+        "nome": "Supino inclinado com halteres",
+        "series": 3,
+        "repeticoes": 15,
+        "descansoSegundos": 60
+      },
+      {
+        "id": "full-body-iniciante-ex-3",
+        "nome": "Barra fixa",
+        "series": 3,
+        "repeticoes": 12,
+        "descansoSegundos": 60
+      },
+      {
+        "id": "full-body-iniciante-ex-4",
+        "nome": "Remada baixa",
+        "series": 3,
+        "repeticoes": 12,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "full-body-iniciante-ex-5",
+        "nome": "Afundo com halteres",
+        "series": 5,
+        "repeticoes": 10,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "full-body-iniciante-ex-6",
+        "nome": "Leg press",
+        "series": 4,
+        "repeticoes": 15,
+        "descansoSegundos": 60
+      }
+    ],
+    "imagemUrl": "/api/imagens/full-body-iniciante.svg"
+  },
+  {
+    "id": "treino-006",
+    "slug": "push-day-completo",
+    "titulo": "Push Day Completo",
+    "categoria": "forca",
+    "grupoMuscular": [
+      "peito",
+      "ombros",
+      "bracos"
+    ],
+    "nivel": "intermediario",
+    "duracaoMinutos": 55,
+    "descricao": "Treino de força focado em peito, ombros, bracos, ideal para ganho de massa muscular e resistência.",
+    "exercicios": [
+      {
+        "id": "push-day-completo-ex-1",
+        "nome": "Peck deck",
+        "series": 3,
+        "repeticoes": 12,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "push-day-completo-ex-2",
+        "nome": "Crossover no cabo",
+        "series": 3,
+        "repeticoes": 8,
+        "descansoSegundos": 60
+      },
+      {
+        "id": "push-day-completo-ex-3",
+        "nome": "Remada alta",
+        "series": 3,
+        "repeticoes": 10,
+        "descansoSegundos": 60
+      },
+      {
+        "id": "push-day-completo-ex-4",
+        "nome": "Elevação frontal",
+        "series": 3,
+        "repeticoes": 15,
+        "descansoSegundos": 90
+      },
+      {
+        "id": "push-day-completo-ex-5",
+        "nome": "Mergulho no banco",
+        "series": 3,
+        "repeticoes": 12,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "push-day-completo-ex-6",
+        "nome": "Tríceps testa",
+        "series": 3,
+        "repeticoes": 20,
+        "descansoSegundos": 60
+      }
+    ],
+    "imagemUrl": "/api/imagens/push-day-completo.svg"
+  },
+  {
+    "id": "treino-007",
+    "slug": "pull-day-completo",
+    "titulo": "Pull Day Completo",
+    "categoria": "forca",
+    "grupoMuscular": [
+      "costas",
+      "bracos"
+    ],
+    "nivel": "intermediario",
+    "duracaoMinutos": 55,
+    "descricao": "Treino de força focado em costas, bracos, ideal para ganho de massa muscular e resistência.",
+    "exercicios": [
+      {
+        "id": "pull-day-completo-ex-1",
+        "nome": "Remada unilateral",
+        "series": 4,
+        "repeticoes": 20,
+        "descansoSegundos": 90
+      },
+      {
+        "id": "pull-day-completo-ex-2",
+        "nome": "Pulldown",
+        "series": 4,
+        "repeticoes": 10,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "pull-day-completo-ex-3",
+        "nome": "Rosca martelo",
+        "series": 3,
+        "repeticoes": 8,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "pull-day-completo-ex-4",
+        "nome": "Tríceps testa",
+        "series": 3,
+        "repeticoes": 10,
+        "descansoSegundos": 90
+      }
+    ],
+    "imagemUrl": "/api/imagens/pull-day-completo.svg"
+  },
+  {
+    "id": "treino-008",
+    "slug": "leg-day-pesado",
+    "titulo": "Leg Day Pesado",
+    "categoria": "forca",
+    "grupoMuscular": [
+      "pernas"
+    ],
+    "nivel": "avancado",
+    "duracaoMinutos": 65,
+    "descricao": "Treino de força focado em pernas, ideal para ganho de massa muscular e resistência.",
+    "exercicios": [
+      {
+        "id": "leg-day-pesado-ex-1",
+        "nome": "Afundo com halteres",
+        "series": 4,
+        "repeticoes": 15,
+        "descansoSegundos": 90
+      },
+      {
+        "id": "leg-day-pesado-ex-2",
+        "nome": "Agachamento livre",
+        "series": 5,
+        "repeticoes": 12,
+        "descansoSegundos": 30
+      }
+    ],
+    "imagemUrl": "/api/imagens/leg-day-pesado.svg"
+  },
+  {
+    "id": "treino-009",
+    "slug": "bracos-em-chamas",
+    "titulo": "Braços em Chamas",
+    "categoria": "forca",
+    "grupoMuscular": [
+      "bracos"
+    ],
+    "nivel": "iniciante",
+    "duracaoMinutos": 35,
+    "descricao": "Treino de força focado em bracos, ideal para ganho de massa muscular e resistência.",
+    "exercicios": [
+      {
+        "id": "bracos-em-chamas-ex-1",
+        "nome": "Mergulho no banco",
+        "series": 5,
+        "repeticoes": 20,
+        "descansoSegundos": 60
+      },
+      {
+        "id": "bracos-em-chamas-ex-2",
+        "nome": "Rosca direta",
+        "series": 5,
+        "repeticoes": 12,
+        "descansoSegundos": 30
+      }
+    ],
+    "imagemUrl": "/api/imagens/bracos-em-chamas.svg"
+  },
+  {
+    "id": "treino-010",
+    "slug": "core-blindado",
+    "titulo": "Core Blindado",
+    "categoria": "forca",
+    "grupoMuscular": [
+      "core"
+    ],
+    "nivel": "iniciante",
+    "duracaoMinutos": 30,
+    "descricao": "Treino de força focado em core, ideal para ganho de massa muscular e resistência.",
+    "exercicios": [
+      {
+        "id": "core-blindado-ex-1",
+        "nome": "Elevação de pernas",
+        "series": 3,
+        "repeticoes": 15,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "core-blindado-ex-2",
+        "nome": "Prancha lateral",
+        "series": 5,
+        "repeticoes": 12,
+        "descansoSegundos": 45
+      }
+    ],
+    "imagemUrl": "/api/imagens/core-blindado.svg"
+  },
+  {
+    "id": "treino-011",
+    "slug": "hipertrofia-peito-e-triceps",
+    "titulo": "Hipertrofia Peito e Tríceps",
+    "categoria": "forca",
+    "grupoMuscular": [
+      "peito",
+      "bracos"
+    ],
+    "nivel": "avancado",
+    "duracaoMinutos": 60,
+    "descricao": "Treino de força focado em peito, bracos, ideal para ganho de massa muscular e resistência.",
+    "exercicios": [
+      {
+        "id": "hipertrofia-peito-e-triceps-ex-1",
+        "nome": "Crossover no cabo",
+        "series": 5,
+        "repeticoes": 12,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "hipertrofia-peito-e-triceps-ex-2",
+        "nome": "Supino reto",
+        "series": 3,
+        "repeticoes": 12,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "hipertrofia-peito-e-triceps-ex-3",
+        "nome": "Rosca martelo",
+        "series": 3,
+        "repeticoes": 20,
+        "descansoSegundos": 60
+      },
+      {
+        "id": "hipertrofia-peito-e-triceps-ex-4",
+        "nome": "Mergulho no banco",
+        "series": 4,
+        "repeticoes": 8,
+        "descansoSegundos": 30
+      }
+    ],
+    "imagemUrl": "/api/imagens/hipertrofia-peito-e-triceps.svg"
+  },
+  {
+    "id": "treino-012",
+    "slug": "hipertrofia-costas-e-biceps",
+    "titulo": "Hipertrofia Costas e Bíceps",
+    "categoria": "forca",
+    "grupoMuscular": [
+      "costas",
+      "bracos"
+    ],
+    "nivel": "avancado",
+    "duracaoMinutos": 60,
+    "descricao": "Treino de força focado em costas, bracos, ideal para ganho de massa muscular e resistência.",
+    "exercicios": [
+      {
+        "id": "hipertrofia-costas-e-biceps-ex-1",
+        "nome": "Remada baixa",
+        "series": 3,
+        "repeticoes": 8,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "hipertrofia-costas-e-biceps-ex-2",
+        "nome": "Remada unilateral",
+        "series": 5,
+        "repeticoes": 8,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "hipertrofia-costas-e-biceps-ex-3",
+        "nome": "Mergulho no banco",
+        "series": 3,
+        "repeticoes": 20,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "hipertrofia-costas-e-biceps-ex-4",
+        "nome": "Tríceps testa",
+        "series": 3,
+        "repeticoes": 15,
+        "descansoSegundos": 45
+      }
+    ],
+    "imagemUrl": "/api/imagens/hipertrofia-costas-e-biceps.svg"
+  },
+  {
+    "id": "treino-013",
+    "slug": "hiit-explosivo",
+    "titulo": "HIIT Explosivo",
+    "categoria": "cardio",
+    "grupoMuscular": [
+      "cardio",
+      "core"
+    ],
+    "nivel": "avancado",
+    "duracaoMinutos": 30,
+    "descricao": "Treino cardiovascular de alta intensidade para queima calórica e condicionamento físico.",
+    "exercicios": [
+      {
+        "id": "hiit-explosivo-ex-1",
+        "nome": "Pular corda",
+        "series": 5,
+        "repeticoes": 15,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "hiit-explosivo-ex-2",
+        "nome": "Remo ergômetro",
+        "series": 5,
+        "repeticoes": 10,
+        "descansoSegundos": 60
+      },
+      {
+        "id": "hiit-explosivo-ex-3",
+        "nome": "Prancha lateral",
+        "series": 4,
+        "repeticoes": 20,
+        "descansoSegundos": 90
+      },
+      {
+        "id": "hiit-explosivo-ex-4",
+        "nome": "Elevação de pernas",
+        "series": 3,
+        "repeticoes": 10,
+        "descansoSegundos": 45
+      }
+    ],
+    "imagemUrl": "/api/imagens/hiit-explosivo.svg"
+  },
+  {
+    "id": "treino-014",
+    "slug": "corrida-intervalada",
+    "titulo": "Corrida Intervalada",
+    "categoria": "cardio",
+    "grupoMuscular": [
+      "cardio"
+    ],
+    "nivel": "intermediario",
+    "duracaoMinutos": 35,
+    "descricao": "Treino cardiovascular de alta intensidade para queima calórica e condicionamento físico.",
+    "exercicios": [
+      {
+        "id": "corrida-intervalada-ex-1",
+        "nome": "Corrida na esteira",
+        "series": 3,
+        "repeticoes": 20,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "corrida-intervalada-ex-2",
+        "nome": "Pular corda",
+        "series": 5,
+        "repeticoes": 10,
+        "descansoSegundos": 30
+      }
+    ],
+    "imagemUrl": "/api/imagens/corrida-intervalada.svg"
+  },
+  {
+    "id": "treino-015",
+    "slug": "cardio-leve-regenerativo",
+    "titulo": "Cardio Leve Regenerativo",
+    "categoria": "cardio",
+    "grupoMuscular": [
+      "cardio"
+    ],
+    "nivel": "iniciante",
+    "duracaoMinutos": 25,
+    "descricao": "Treino cardiovascular de alta intensidade para queima calórica e condicionamento físico.",
+    "exercicios": [
+      {
+        "id": "cardio-leve-regenerativo-ex-1",
+        "nome": "Corrida na esteira",
+        "series": 3,
+        "repeticoes": 8,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "cardio-leve-regenerativo-ex-2",
+        "nome": "Burpee",
+        "series": 4,
+        "repeticoes": 8,
+        "descansoSegundos": 45
+      }
+    ],
+    "imagemUrl": "/api/imagens/cardio-leve-regenerativo.svg"
+  },
+  {
+    "id": "treino-016",
+    "slug": "bike-e-core",
+    "titulo": "Bike e Core",
+    "categoria": "cardio",
+    "grupoMuscular": [
+      "cardio",
+      "core"
+    ],
+    "nivel": "intermediario",
+    "duracaoMinutos": 40,
+    "descricao": "Treino cardiovascular de alta intensidade para queima calórica e condicionamento físico.",
+    "exercicios": [
+      {
+        "id": "bike-e-core-ex-1",
+        "nome": "Pular corda",
+        "series": 3,
+        "repeticoes": 20,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "bike-e-core-ex-2",
+        "nome": "Escada estática",
+        "series": 5,
+        "repeticoes": 20,
+        "descansoSegundos": 90
+      },
+      {
+        "id": "bike-e-core-ex-3",
+        "nome": "Abdominal supra",
+        "series": 4,
+        "repeticoes": 10,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "bike-e-core-ex-4",
+        "nome": "Prancha lateral",
+        "series": 3,
+        "repeticoes": 15,
+        "descansoSegundos": 60
+      }
+    ],
+    "imagemUrl": "/api/imagens/bike-e-core.svg"
+  },
+  {
+    "id": "treino-017",
+    "slug": "circuito-metabolico",
+    "titulo": "Circuito Metabólico",
+    "categoria": "cardio",
+    "grupoMuscular": [
+      "cardio",
+      "pernas",
+      "core"
+    ],
+    "nivel": "avancado",
+    "duracaoMinutos": 45,
+    "descricao": "Treino cardiovascular de alta intensidade para queima calórica e condicionamento físico.",
+    "exercicios": [
+      {
+        "id": "circuito-metabolico-ex-1",
+        "nome": "Escada estática",
+        "series": 4,
+        "repeticoes": 8,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "circuito-metabolico-ex-2",
+        "nome": "Burpee",
+        "series": 3,
+        "repeticoes": 15,
+        "descansoSegundos": 60
+      },
+      {
+        "id": "circuito-metabolico-ex-3",
+        "nome": "Agachamento livre",
+        "series": 3,
+        "repeticoes": 10,
+        "descansoSegundos": 90
+      },
+      {
+        "id": "circuito-metabolico-ex-4",
+        "nome": "Leg press",
+        "series": 3,
+        "repeticoes": 15,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "circuito-metabolico-ex-5",
+        "nome": "Elevação de pernas",
+        "series": 3,
+        "repeticoes": 8,
+        "descansoSegundos": 90
+      },
+      {
+        "id": "circuito-metabolico-ex-6",
+        "nome": "Prancha lateral",
+        "series": 5,
+        "repeticoes": 8,
+        "descansoSegundos": 30
+      }
+    ],
+    "imagemUrl": "/api/imagens/circuito-metabolico.svg"
+  },
+  {
+    "id": "treino-018",
+    "slug": "cardio-iniciante-esteira",
+    "titulo": "Cardio Iniciante Esteira",
+    "categoria": "cardio",
+    "grupoMuscular": [
+      "cardio"
+    ],
+    "nivel": "iniciante",
+    "duracaoMinutos": 20,
+    "descricao": "Treino cardiovascular de alta intensidade para queima calórica e condicionamento físico.",
+    "exercicios": [
+      {
+        "id": "cardio-iniciante-esteira-ex-1",
+        "nome": "Burpee",
+        "series": 3,
+        "repeticoes": 8,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "cardio-iniciante-esteira-ex-2",
+        "nome": "Remo ergômetro",
+        "series": 3,
+        "repeticoes": 15,
+        "descansoSegundos": 90
+      }
+    ],
+    "imagemUrl": "/api/imagens/cardio-iniciante-esteira.svg"
+  },
+  {
+    "id": "treino-019",
+    "slug": "mobilidade-de-quadril",
+    "titulo": "Mobilidade de Quadril",
+    "categoria": "mobilidade",
+    "grupoMuscular": [
+      "pernas",
+      "core"
+    ],
+    "nivel": "iniciante",
+    "duracaoMinutos": 25,
+    "descricao": "Sessão de mobilidade e alongamento para melhorar amplitude de movimento e prevenir lesões.",
+    "exercicios": [
+      {
+        "id": "mobilidade-de-quadril-ex-1",
+        "nome": "Mesa flexora",
+        "series": 4,
+        "repeticoes": 8,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "mobilidade-de-quadril-ex-2",
+        "nome": "Leg press",
+        "series": 4,
+        "repeticoes": 8,
+        "descansoSegundos": 90
+      },
+      {
+        "id": "mobilidade-de-quadril-ex-3",
+        "nome": "Elevação de pernas",
+        "series": 4,
+        "repeticoes": 15,
+        "descansoSegundos": 90
+      },
+      {
+        "id": "mobilidade-de-quadril-ex-4",
+        "nome": "Prancha lateral",
+        "series": 3,
+        "repeticoes": 10,
+        "descansoSegundos": 60
+      }
+    ],
+    "imagemUrl": "/api/imagens/mobilidade-de-quadril.svg"
+  },
+  {
+    "id": "treino-020",
+    "slug": "alongamento-total",
+    "titulo": "Alongamento Total",
+    "categoria": "mobilidade",
+    "grupoMuscular": [
+      "costas",
+      "pernas",
+      "ombros"
+    ],
+    "nivel": "iniciante",
+    "duracaoMinutos": 20,
+    "descricao": "Sessão de mobilidade e alongamento para melhorar amplitude de movimento e prevenir lesões.",
+    "exercicios": [
+      {
+        "id": "alongamento-total-ex-1",
+        "nome": "Remada curvada",
+        "series": 5,
+        "repeticoes": 20,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "alongamento-total-ex-2",
+        "nome": "Puxada frontal",
+        "series": 5,
+        "repeticoes": 12,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "alongamento-total-ex-3",
+        "nome": "Agachamento livre",
+        "series": 4,
+        "repeticoes": 20,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "alongamento-total-ex-4",
+        "nome": "Afundo com halteres",
+        "series": 3,
+        "repeticoes": 20,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "alongamento-total-ex-5",
+        "nome": "Elevação lateral",
+        "series": 5,
+        "repeticoes": 8,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "alongamento-total-ex-6",
+        "nome": "Desenvolvimento militar",
+        "series": 4,
+        "repeticoes": 8,
+        "descansoSegundos": 45
+      }
+    ],
+    "imagemUrl": "/api/imagens/alongamento-total.svg"
+  },
+  {
+    "id": "treino-021",
+    "slug": "mobilidade-de-ombros",
+    "titulo": "Mobilidade de Ombros",
+    "categoria": "mobilidade",
+    "grupoMuscular": [
+      "ombros"
+    ],
+    "nivel": "iniciante",
+    "duracaoMinutos": 20,
+    "descricao": "Sessão de mobilidade e alongamento para melhorar amplitude de movimento e prevenir lesões.",
+    "exercicios": [
+      {
+        "id": "mobilidade-de-ombros-ex-1",
+        "nome": "Desenvolvimento Arnold",
+        "series": 5,
+        "repeticoes": 8,
+        "descansoSegundos": 90
+      },
+      {
+        "id": "mobilidade-de-ombros-ex-2",
+        "nome": "Desenvolvimento militar",
+        "series": 5,
+        "repeticoes": 20,
+        "descansoSegundos": 60
+      }
+    ],
+    "imagemUrl": "/api/imagens/mobilidade-de-ombros.svg"
+  },
+  {
+    "id": "treino-022",
+    "slug": "yoga-para-recuperacao",
+    "titulo": "Yoga para Recuperação",
+    "categoria": "mobilidade",
+    "grupoMuscular": [
+      "core",
+      "costas"
+    ],
+    "nivel": "iniciante",
+    "duracaoMinutos": 30,
+    "descricao": "Sessão de mobilidade e alongamento para melhorar amplitude de movimento e prevenir lesões.",
+    "exercicios": [
+      {
+        "id": "yoga-para-recuperacao-ex-1",
+        "nome": "Elevação de pernas",
+        "series": 5,
+        "repeticoes": 12,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "yoga-para-recuperacao-ex-2",
+        "nome": "Abdominal supra",
+        "series": 4,
+        "repeticoes": 15,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "yoga-para-recuperacao-ex-3",
+        "nome": "Remada unilateral",
+        "series": 4,
+        "repeticoes": 12,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "yoga-para-recuperacao-ex-4",
+        "nome": "Remada baixa",
+        "series": 3,
+        "repeticoes": 15,
+        "descansoSegundos": 30
+      }
+    ],
+    "imagemUrl": "/api/imagens/yoga-para-recuperacao.svg"
+  },
+  {
+    "id": "treino-023",
+    "slug": "mobilidade-funcional-avancada",
+    "titulo": "Mobilidade Funcional Avançada",
+    "categoria": "mobilidade",
+    "grupoMuscular": [
+      "pernas",
+      "ombros",
+      "core"
+    ],
+    "nivel": "intermediario",
+    "duracaoMinutos": 35,
+    "descricao": "Sessão de mobilidade e alongamento para melhorar amplitude de movimento e prevenir lesões.",
+    "exercicios": [
+      {
+        "id": "mobilidade-funcional-avancada-ex-1",
+        "nome": "Agachamento livre",
+        "series": 3,
+        "repeticoes": 20,
+        "descansoSegundos": 60
+      },
+      {
+        "id": "mobilidade-funcional-avancada-ex-2",
+        "nome": "Afundo com halteres",
+        "series": 3,
+        "repeticoes": 12,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "mobilidade-funcional-avancada-ex-3",
+        "nome": "Elevação lateral",
+        "series": 4,
+        "repeticoes": 10,
+        "descansoSegundos": 90
+      },
+      {
+        "id": "mobilidade-funcional-avancada-ex-4",
+        "nome": "Elevação frontal",
+        "series": 5,
+        "repeticoes": 12,
+        "descansoSegundos": 30
+      },
+      {
+        "id": "mobilidade-funcional-avancada-ex-5",
+        "nome": "Russian twist",
+        "series": 5,
+        "repeticoes": 8,
+        "descansoSegundos": 45
+      },
+      {
+        "id": "mobilidade-funcional-avancada-ex-6",
+        "nome": "Elevação de pernas",
+        "series": 4,
+        "repeticoes": 8,
+        "descansoSegundos": 30
+      }
+    ],
+    "imagemUrl": "/api/imagens/mobilidade-funcional-avancada.svg"
+  }
+]
