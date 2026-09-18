@@ -5,7 +5,7 @@ import { MensagemErro } from '../../../components/MensagemErro';
 import { ListaTreinos } from '../components/ListaTreinos';
 import { useTreinos } from '../hooks/useTreinos';
 import { useDebounce } from '../hooks/useDebounce';
-import { filtrarTreinos } from '../treinos.utils';
+import { filtrarTreinos, ordenarTreinos, type OrdenacaoTreinos } from '../treinos.utils';
 import { GRUPOS_MUSCULARES, NIVEIS, ROTULO_GRUPO, ROTULO_NIVEL } from '../types';
 import type { GrupoMuscular, Nivel } from '../types';
 
@@ -14,6 +14,7 @@ export function CatalogoPage() {
   const [termoBusca, setTermoBusca] = useState('');
   const [grupoSelecionado, setGrupoSelecionado] = useState<GrupoMuscular | 'todos'>('todos');
   const [nivelSelecionado, setNivelSelecionado] = useState<Nivel | 'todos'>('todos');
+  const [ordenacao, setOrdenacao] = useState<OrdenacaoTreinos>('padrao');
 
   const termoDebounced = useDebounce(termoBusca, 300);
 
@@ -21,8 +22,16 @@ export function CatalogoPage() {
   // quando a lista de treinos ou algum dos critérios de fato muda.
   const treinosFiltrados = useMemo(() => {
     if (!treinos) return [];
-    return filtrarTreinos(treinos, termoDebounced, grupoSelecionado, nivelSelecionado);
-  }, [treinos, termoDebounced, grupoSelecionado, nivelSelecionado]);
+    const filtrados = filtrarTreinos(treinos, termoDebounced, grupoSelecionado, nivelSelecionado);
+    return ordenarTreinos(filtrados, ordenacao);
+  }, [treinos, termoDebounced, grupoSelecionado, nivelSelecionado, ordenacao]);
+
+  function aoAlterarBusca(valor: string) {
+    setTermoBusca(valor);
+    if (valor.trim() === '') {
+      setOrdenacao('padrao');
+    }
+  }
 
   return (
     <div className="pagina">
@@ -32,7 +41,7 @@ export function CatalogoPage() {
       </header>
 
       <div className="filtros">
-        <CampoBusca valor={termoBusca} aoAlterar={setTermoBusca} />
+        <CampoBusca valor={termoBusca} aoAlterar={aoAlterarBusca} />
 
         <select
           value={grupoSelecionado}
@@ -58,6 +67,16 @@ export function CatalogoPage() {
               {ROTULO_NIVEL[nivel]}
             </option>
           ))}
+        </select>
+
+        <select
+          value={ordenacao}
+          onChange={(e) => setOrdenacao(e.target.value as OrdenacaoTreinos)}
+          aria-label="Ordenar treinos"
+        >
+          <option value="padrao">Ordem padrão</option>
+          <option value="titulo">Título (A–Z)</option>
+          <option value="duracao">Menor duração</option>
         </select>
       </div>
 

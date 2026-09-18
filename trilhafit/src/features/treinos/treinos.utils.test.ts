@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { filtrarTreinos, formatarTempo } from './treinos.utils';
+import { filtrarTreinos, formatarTempo, ordenarTreinos } from './treinos.utils';
 import type { Treino } from './types';
 
 const treinosFalsos: Treino[] = [
@@ -65,5 +65,62 @@ describe('filtrarTreinos', () => {
     const resultado = filtrarTreinos(treinosFalsos, 'peito', 'peito', 'intermediario');
     expect(resultado).toHaveLength(1);
     expect(resultado[0].id).toBe('1');
+  });
+});
+
+describe('ordenarTreinos', () => {
+  it('mantém a ordem original por padrão e retorna uma nova lista', () => {
+    const resultado = ordenarTreinos(treinosFalsos);
+    expect(resultado).toEqual(treinosFalsos);
+    expect(resultado).not.toBe(treinosFalsos);
+  });
+
+  it('ordena por título de A a Z, respeitando a acentuação', () => {
+    const treinos = [
+      ...treinosFalsos,
+      { ...treinosFalsos[0], id: '3', titulo: 'Abdômen Forte' },
+      { ...treinosFalsos[0], id: '4', titulo: 'Água e Movimento' },
+    ];
+
+    const resultado = ordenarTreinos(treinos, 'titulo');
+    expect(resultado.map((treino) => treino.id)).toEqual(['3', '4', '2', '1']);
+  });
+
+  it('ordena pela menor duração usando comparação numérica', () => {
+    const treinos = [
+      { ...treinosFalsos[0], duracaoMinutos: 120 },
+      treinosFalsos[1],
+      { ...treinosFalsos[0], id: '3', duracaoMinutos: 5 },
+    ];
+
+    const resultado = ordenarTreinos(treinos, 'duracao');
+    expect(resultado.map((treino) => treino.id)).toEqual(['3', '2', '1']);
+  });
+
+  it('não modifica a lista recebida ao ordenar', () => {
+    const treinos = [...treinosFalsos];
+    Object.freeze(treinos);
+
+    ordenarTreinos(treinos, 'titulo');
+    ordenarTreinos(treinos, 'duracao');
+
+    expect(treinos).toEqual(treinosFalsos);
+  });
+
+  it('ordena apenas os treinos que atendem aos filtros', () => {
+    const treinos = [
+      ...treinosFalsos,
+      { ...treinosFalsos[0], id: '3', duracaoMinutos: 30 },
+    ];
+    const filtrados = filtrarTreinos(treinos, 'peito', 'peito', 'intermediario');
+
+    const resultado = ordenarTreinos(filtrados, 'duracao');
+    expect(resultado.map((treino) => treino.id)).toEqual(['3', '1']);
+  });
+
+  it('retorna uma lista vazia quando não há treinos', () => {
+    expect(ordenarTreinos([], 'padrao')).toEqual([]);
+    expect(ordenarTreinos([], 'titulo')).toEqual([]);
+    expect(ordenarTreinos([], 'duracao')).toEqual([]);
   });
 });

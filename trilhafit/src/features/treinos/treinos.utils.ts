@@ -1,5 +1,7 @@
 import type { Categoria, GrupoMuscular, Nivel, RegistroTreino, Treino } from './types';
 
+export type OrdenacaoTreinos = 'padrao' | 'titulo' | 'duracao';
+
 /**
  * Filtra treinos por um termo de busca livre (título) e, opcionalmente,
  * por grupo muscular e nível. Função pura — sem dependências externas —
@@ -27,6 +29,26 @@ export function filtrarTreinos(
 
     return combinaTermo && combinaGrupo && combinaNivel;
   });
+}
+
+/**
+ * Ordena uma cópia dos treinos, preservando a lista original.
+ */
+export function ordenarTreinos(
+  treinos: Treino[],
+  ordenacao: OrdenacaoTreinos = 'padrao'
+): Treino[] {
+  const copia = [...treinos];
+
+  if (ordenacao === 'titulo') {
+    return copia.sort((a, b) => a.titulo.localeCompare(b.titulo, 'pt-BR'));
+  }
+
+  if (ordenacao === 'duracao') {
+    return copia.sort((a, b) => a.duracaoMinutos - b.duracaoMinutos);
+  }
+
+  return copia;
 }
 
 /**
