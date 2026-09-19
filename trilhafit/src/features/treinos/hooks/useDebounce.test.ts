@@ -12,59 +12,65 @@ describe('useDebounce', () => {
   });
 
   it('retorna o valor inicial imediatamente', () => {
-    const { result } = renderHook(() => useDebounce('a', 300));
-    expect(result.current).toBe('a');
+    const { result } = renderHook(() => useDebounce('abc', 300));
+
+    expect(result.current).toBe('abc');
   });
 
-  it('não atualiza o valor antes do atraso terminar', () => {
-    const { result, rerender } = renderHook(({ valor }) => useDebounce(valor, 300), {
-      initialProps: { valor: 'a' },
-    });
+  it('só atualiza o valor depois do atraso', () => {
+    const { result, rerender } = renderHook(
+      ({ valor }) => useDebounce(valor, 300),
+      { initialProps: { valor: 'a' } },
+    );
 
     rerender({ valor: 'ab' });
-
-    act(() => {
-      vi.advanceTimersByTime(200);
-    });
-
     expect(result.current).toBe('a');
-  });
-
-  it('atualiza o valor depois do atraso completo', () => {
-    const { result, rerender } = renderHook(({ valor }) => useDebounce(valor, 300), {
-      initialProps: { valor: 'a' },
-    });
-
-    rerender({ valor: 'ab' });
 
     act(() => {
-      vi.advanceTimersByTime(300);
+      vi.advanceTimersByTime(299);
     });
+    expect(result.current).toBe('a');
 
+    act(() => {
+      vi.advanceTimersByTime(1);
+    });
     expect(result.current).toBe('ab');
   });
 
-  it('reinicia o temporizador a cada nova digitação (cleanup funcionando)', () => {
-    const { result, rerender } = renderHook(({ valor }) => useDebounce(valor, 300), {
-      initialProps: { valor: 'a' },
-    });
+  it('reinicia o timer a cada mudança e usa só o último valor', () => {
+    const { result, rerender } = renderHook(
+      ({ valor }) => useDebounce(valor, 300),
+      { initialProps: { valor: 'a' } },
+    );
 
     rerender({ valor: 'ab' });
     act(() => {
       vi.advanceTimersByTime(200);
     });
+
     rerender({ valor: 'abc' });
     act(() => {
       vi.advanceTimersByTime(200);
     });
-
-    // Ainda não passaram 300ms desde a última alteração ("abc")
+    
     expect(result.current).toBe('a');
 
     act(() => {
       vi.advanceTimersByTime(100);
     });
-
     expect(result.current).toBe('abc');
+  });
+
+  it('cancela o timer pendente ao desmontar (cleanup)', () => {
+    const { rerender, unmount } = renderHook(
+      ({ valor }) => useDebounce(valor, 300),
+      { initialProps: { valor: 'a' } },
+    );
+
+    rerender({ valor: 'ab' });
+    expect(vi.getTimerCount()).toBe(1);
+
+    unmount();
+    expect(vi.getTimerCount()).toBe(0);
   });
 });
