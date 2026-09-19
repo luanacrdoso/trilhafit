@@ -35,6 +35,11 @@ export const TreinoCard = memo(function TreinoCard({
           <span className={`selo selo--${treino.categoria}`}>
             {ROTULO_CATEGORIA[treino.categoria]}
           </span>
+          
+          {/* Badge de Duração sobre a imagem (Exercício 4) */}
+          <span className="treino-card__badge-duracao">
+            {treino.duracaoMinutos} min
+          </span>
         </div>
         <div className="treino-card__corpo">
           <h3 className="treino-card__titulo">{treino.titulo}</h3>

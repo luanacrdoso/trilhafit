@@ -5,7 +5,12 @@ import { MensagemErro } from '../../../components/MensagemErro';
 import { ListaTreinos } from '../components/ListaTreinos';
 import { useTreinos } from '../hooks/useTreinos';
 import { useDebounce } from '../hooks/useDebounce';
-import { filtrarTreinos, ordenarTreinos, type OrdenacaoTreinos } from '../treinos.utils';
+import {
+  filtrarTreinos,
+  filtrarPorNivel,
+  ordenarTreinos,
+  type OrdenacaoTreinos,
+} from '../treinos.utils';
 import { GRUPOS_MUSCULARES, NIVEIS, ROTULO_GRUPO, ROTULO_NIVEL } from '../types';
 import type { GrupoMuscular, Nivel } from '../types';
 
@@ -22,8 +27,15 @@ export function CatalogoPage() {
   // quando a lista de treinos ou algum dos critérios de fato muda.
   const treinosFiltrados = useMemo(() => {
     if (!treinos) return [];
-    const filtrados = filtrarTreinos(treinos, termoDebounced, grupoSelecionado, nivelSelecionado);
-    return ordenarTreinos(filtrados, ordenacao);
+
+    // 1. Filtro por termo e grupo
+    const porTermoEGrupo = filtrarTreinos(treinos, termoDebounced, grupoSelecionado);
+
+    // 2. Filtro exclusivo por nível (composição em sequência)
+    const porNivel = filtrarPorNivel(porTermoEGrupo, nivelSelecionado);
+
+    // 3. Ordenação final
+    return ordenarTreinos(porNivel, ordenacao);
   }, [treinos, termoDebounced, grupoSelecionado, nivelSelecionado, ordenacao]);
 
   function aoAlterarBusca(valor: string) {

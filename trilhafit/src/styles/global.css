@@ -755,3 +755,21 @@ ol {
     transition-duration: 0.01ms !important;
   }
 }
+
+/*modificação para adicionar o badge de duração no card de treino*/
+
+.treino-card__imagem-wrapper {
+  position: relative; /* Garante o posicionamento correto do badge */
+}
+
+.treino-card__badge-duracao {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: var(--cor-token-paleta, #1f2937); /* Token de cor da paleta */
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}

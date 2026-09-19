@@ -103,3 +103,17 @@ function obterChaveSemana(data: Date): string {
   const numeroSemana = Math.ceil(((copia.getTime() - inicioAno.getTime()) / 86400000 + 1) / 7);
   return `${copia.getUTCFullYear()}-S${String(numeroSemana).padStart(2, '0')}`;
 }
+
+/**
+ * Filtra a lista de treinos apenas pelo nível de dificuldade.
+ */
+
+export function filtrarPorNivel(
+  treinos: Treino[],
+  nivel: Nivel | 'todos'
+): Treino[] {
+  if (nivel === 'todos') {
+    return treinos;
+  }
+  return treinos.filter((treino) => treino.nivel === nivel);
+}
