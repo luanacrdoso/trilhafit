@@ -11,13 +11,13 @@ describe('useDebounce', () => {
     vi.useRealTimers();
   });
 
-  it('retorna o valor inicial imediatamente', () => {
+  it('deve retornar o valor inicial imediatamente', () => {
     const { result } = renderHook(() => useDebounce('abc', 300));
 
     expect(result.current).toBe('abc');
   });
 
-  it('só atualiza o valor depois do atraso', () => {
+  it('deve atualizar o valor somente depois do atraso de 300ms', () => {
     const { result, rerender } = renderHook(
       ({ valor }) => useDebounce(valor, 300),
       { initialProps: { valor: 'a' } },
@@ -37,7 +37,7 @@ describe('useDebounce', () => {
     expect(result.current).toBe('ab');
   });
 
-  it('reinicia o timer a cada mudança e usa só o último valor', () => {
+  it('deve reiniciar o timer a cada mudança e usar apenas o último valor', () => {
     const { result, rerender } = renderHook(
       ({ valor }) => useDebounce(valor, 300),
       { initialProps: { valor: 'a' } },
@@ -52,7 +52,7 @@ describe('useDebounce', () => {
     act(() => {
       vi.advanceTimersByTime(200);
     });
-    
+    // 400ms no total, mas o timer foi reiniciado: ainda não atualizou
     expect(result.current).toBe('a');
 
     act(() => {
@@ -61,7 +61,7 @@ describe('useDebounce', () => {
     expect(result.current).toBe('abc');
   });
 
-  it('cancela o timer pendente ao desmontar (cleanup)', () => {
+  it('deve cancelar o timer pendente ao desmontar o componente', () => {
     const { rerender, unmount } = renderHook(
       ({ valor }) => useDebounce(valor, 300),
       { initialProps: { valor: 'a' } },
