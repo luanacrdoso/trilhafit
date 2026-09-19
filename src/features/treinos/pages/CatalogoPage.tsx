@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { CampoBusca } from '../../../components/CampoBusca';
 import { Loading } from '../../../components/Loading';
 import { MensagemErro } from '../../../components/MensagemErro';
@@ -14,29 +14,88 @@ import {
 import { GRUPOS_MUSCULARES, NIVEIS, ROTULO_GRUPO, ROTULO_NIVEL } from '../types';
 import type { GrupoMuscular, Nivel } from '../types';
 
+const ITENS_POR_PAGINA = 8;
+
+interface PaginacaoProps {
+  totalPaginas: number;
+  paginaAtual: number;
+  onMudarPagina: (pagina: number) => void;
+}
+
+function Paginacao({ totalPaginas, paginaAtual, onMudarPagina }: PaginacaoProps) {
+  if (totalPaginas <= 1) return null;
+
+  const paginas = Array.from({ length: totalPaginas }, (_, i) => i + 1);
+
+  return (
+    <nav className="paginacao" aria-label="Paginação">
+      <button
+        type="button"
+        onClick={() => onMudarPagina(paginaAtual - 1)}
+        disabled={paginaAtual === 1}
+      >
+        Anterior
+      </button>
+
+      {paginas.map((num) => (
+        <button
+          key={num}
+          type="button"
+          onClick={() => onMudarPagina(num)}
+          className={paginaAtual === num ? 'ativo' : ''}
+        >
+          {num}
+        </button>
+      ))}
+
+      <button
+        type="button"
+        onClick={() => onMudarPagina(paginaAtual + 1)}
+        disabled={paginaAtual === totalPaginas}
+      >
+        Próximo
+      </button>
+    </nav>
+  );
+}
+
 export function CatalogoPage() {
   const { data: treinos, isLoading, isError, refetch } = useTreinos();
   const [termoBusca, setTermoBusca] = useState('');
   const [grupoSelecionado, setGrupoSelecionado] = useState<GrupoMuscular | 'todos'>('todos');
   const [nivelSelecionado, setNivelSelecionado] = useState<Nivel | 'todos'>('todos');
   const [ordenacao, setOrdenacao] = useState<OrdenacaoTreinos>('padrao');
+  
+  // Estado para controle da paginação
+  const [paginaAtual, setPaginaAtual] = useState(1);
 
   const termoDebounced = useDebounce(termoBusca, 300);
 
-  // useMemo evita refazer o filtro em toda renderização — só recalcula
-  // quando a lista de treinos ou algum dos critérios de fato muda[cite: 7].
+  // 1. Filtragem e ordenação completa dos treinos
   const treinosFiltrados = useMemo(() => {
     if (!treinos) return [];
 
-    // 1. Filtro por termo e grupo
     const porTermoEGrupo = filtrarTreinos(treinos, termoDebounced, grupoSelecionado);
-
-    // 2. Filtro exclusivo por nível (composição em sequência)
     const porNivel = filtrarPorNivel(porTermoEGrupo, nivelSelecionado);
 
-    // 3. Ordenação final
     return ordenarTreinos(porNivel, ordenacao);
   }, [treinos, termoDebounced, grupoSelecionado, nivelSelecionado, ordenacao]);
+
+  // 2. Reseta para a página 1 sempre que qualquer filtro ou busca mudar
+  useEffect(() => {
+    setPaginaAtual(1);
+  }, [termoDebounced, grupoSelecionado, nivelSelecionado, ordenacao]);
+
+  // 3. Cálculo do total de páginas com useMemo
+  const totalPaginas = useMemo(() => {
+    return Math.ceil(treinosFiltrados.length / ITENS_POR_PAGINA) || 1;
+  }, [treinosFiltrados.length]);
+
+  // 4. Seleção dos 8 itens referentes à página atual com useMemo
+  const treinosPaginados = useMemo(() => {
+    const inicio = (paginaAtual - 1) * ITENS_POR_PAGINA;
+    return treinosFiltrados.slice(inicio, inicio + ITENS_POR_PAGINA);
+  }, [treinosFiltrados, paginaAtual]);
 
   function aoAlterarBusca(valor: string) {
     setTermoBusca(valor);
@@ -105,7 +164,16 @@ export function CatalogoPage() {
             {treinosFiltrados.length}{' '}
             {treinosFiltrados.length === 1 ? 'treino encontrado' : 'treinos encontrados'}
           </p>
-          <ListaTreinos treinos={treinosFiltrados} />
+          
+          {/* Exibe apenas os treinos da página atual */}
+          <ListaTreinos treinos={treinosPaginados} />
+
+          {/* Controle de navegação de páginas */}
+          <Paginacao
+            totalPaginas={totalPaginas}
+            paginaAtual={paginaAtual}
+            onMudarPagina={(novaPagina) => setPaginaAtual(novaPagina)}
+          />
         </>
       )}
     </div>
