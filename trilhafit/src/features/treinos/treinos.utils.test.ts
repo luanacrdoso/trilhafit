@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { filtrarTreinos, formatarTempo, ordenarTreinos } from './treinos.utils';
+import { filtrarTreinos, filtrarPorNivel, formatarTempo, ordenarTreinos } from './treinos.utils';
 import type { Treino } from './types';
 
 const treinosFalsos: Treino[] = [
@@ -122,5 +122,30 @@ describe('ordenarTreinos', () => {
     expect(ordenarTreinos([], 'padrao')).toEqual([]);
     expect(ordenarTreinos([], 'titulo')).toEqual([]);
     expect(ordenarTreinos([], 'duracao')).toEqual([]);
+  });
+});
+
+const treinosMocados: Partial<Treino>[] = [
+  { id: '1', titulo: 'Treino A', nivel: 'iniciante' },
+  { id: '2', titulo: 'Treino B', nivel: 'intermediario' },
+  { id: '3', titulo: 'Treino C', nivel: 'avancado' },
+];
+
+describe('filtrarPorNivel', () => {
+  it('deve retornar todos os treinos quando a opção selecionada for "todos"', () => {
+    const resultado = filtrarPorNivel(treinosMocados as Treino[], 'todos');
+    expect(resultado).toHaveLength(3);
+  });
+
+  it('deve filtrar corretamente apenas os treinos do nível "iniciante"', () => {
+    const resultado = filtrarPorNivel(treinosMocados as Treino[], 'iniciante');
+    expect(resultado).toHaveLength(1);
+    expect(resultado[0].nivel).toBe('iniciante');
+  });
+
+  it('deve retornar uma lista vazia caso não haja treinos com o nível especificado', () => {
+    const listaVazia: Treino[] = [];
+    const resultado = filtrarPorNivel(listaVazia, 'avancado');
+    expect(resultado).toHaveLength(0);
   });
 });
